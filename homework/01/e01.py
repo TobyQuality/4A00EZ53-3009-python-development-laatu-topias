@@ -26,4 +26,7 @@ kilpikonna.left(90)
 # Mene eteenpäin 50 pikseliä
 kilpikonna.forward(50)
 
+# Käänny vasemmalle 90 astetta
+kilpikonna.left(90)
+
 tkinter.mainloop()
