@@ -16,3 +16,6 @@ elif grade == 2 or grade == 1:
     print("Weak")
 else:
     print("Fail")
+
+grade = ask_input()
+output(grade)
