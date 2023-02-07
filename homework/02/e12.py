@@ -1,5 +1,8 @@
 import unittest
 
+"""
+This method sums up two digits
+"""
 def calculate_sum(a, b):
     return a + b
 

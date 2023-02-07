@@ -12,7 +12,6 @@ def get_int(message, min, max):
         input_is_number = False
         print(message)
         user_input = input()
-
         #isdigit method doesn't include the minus sign, so it can give a misleading result
         #that is why there needs to be another special conditional check for the minus sign
         if user_input[0] == '-':
