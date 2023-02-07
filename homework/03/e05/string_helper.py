@@ -97,8 +97,8 @@ def get_title(title, amount, char):
         #creating the final result by piling layers on top of each other
         #and then returning the result
         result = f"""{top_layer}
-        {middle_layer}
-        {bottom_layer}"""
+{middle_layer}
+{bottom_layer}"""
         return result
 
     else:
