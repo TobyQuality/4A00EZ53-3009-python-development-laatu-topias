@@ -3,8 +3,7 @@ import unittest
 from string_helper import get_title
 
 class TestStringHelper(unittest.TestCase):
-    def test_get_title(self): 
-
+    def test_get_title(self):
         # expect an exception if title's length is greater than amount's value
         self.assertRaises(Exception, get_title, "abc", 2, "*")
         # expect an exception if title is not string
