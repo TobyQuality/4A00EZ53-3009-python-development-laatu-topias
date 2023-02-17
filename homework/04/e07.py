@@ -39,4 +39,4 @@ while highscore < 7:
         year = year + 1
 
 total_wins = wins - costs
-print(f"Wow dude, you won {total_wins} euros! (not taking inflation and the devaluation of the currency int account)")
+print(f"Wow dude, you won {total_wins} euros! (not taking inflation and the devaluation of the currency into account)")

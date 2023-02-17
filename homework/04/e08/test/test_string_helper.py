@@ -23,4 +23,3 @@ class TestStringHelper(unittest.TestCase):
         self.assertEqual(list_to_str([]), "Empty List\n")
         test_array = ["hello", "hi"]
         self.assertEqual(list_to_str(test_array)[:9], "Database")
-    
