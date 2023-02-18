@@ -1,5 +1,5 @@
+import datetime
 import re
-
 
 def is_date(date):
     if type(date) is not str:
@@ -93,3 +93,60 @@ def is_email(email):
         return False
     # if there are no problems with validation checks above, True value will be returned
     return True
+
+def is_personal_id(id):
+    if type(id) is not str:
+        raise Exception("the id must be given as string object")
+    #First check is about finding out, if the overall syntax is correct
+    match_object = re.search("\d{6}[-A]\d{3}[0-9A-FHJ-OPR-Y]", id)
+    if bool(match_object) == False:
+        return False
+    # Next validations involve checking if the date format is alright using is_date function
+    # There can be no values such as month being 55 or day being 65 for 
+    day = id[0:2]
+    month = id[2:4]
+    year = ""
+    # converting year needs a little extra checking
+    # if the seventh character is '-', then the person has been born in 1900's
+    # if it is 'A', the person has been born in 2000's
+    if id[6] == "-":
+        year = "19" + id[4:6]
+    if id[6] == "A":
+        year = "20" + id[4:6]
+    # then utilizing the function is_date we can determine,
+    # if the date syntax is correct
+    date = year + "-" + month + "-" + day
+    if is_date(date) == False:
+        return False
+    # then we can check if the id argument is right
+    # in the sense that if the id's year is greater than the current year,
+    # then it is certainly a fake ID
+    date_now = datetime.datetime.now()
+    current_year = date_now.year
+    if int(year) > current_year:
+        return False
+    # id has individual number consisting of three digits after "-" or "A"
+    # valid individual number is between 002-899
+    individual_number = id[7:10]
+    if int(individual_number) >= 2 and int(individual_number) < 900:
+        pass
+    else:
+        return False
+    # lastly the id has a character in the end,
+    # which is a hash from merging all the numbers together (date and individual number)
+    # by dividing them with 31 and determining the check digit based on
+    # the remainder of the division.
+    # The check digits are based on Finnish Id standard.
+    # Check digit table is found on: https://fi.wikipedia.org/wiki/Henkil%C3%B6tunnus
+    # The remainder is also the index for the check digit
+    checkDigits = ['0','1','2','3','4','5','6','7','8','9','A',
+            'B','C','D','E','F','H','J','K','L','M','N','P','R','S','T','U',
+            'V','W','X','Y']
+    digits_merged = day + month + id[4:6] + individual_number
+    remainder = int(digits_merged) % 31
+    checkDigit = checkDigits[remainder]
+    # last validation check
+    if checkDigit != id[10]:
+        return False
+    else:
+        return True

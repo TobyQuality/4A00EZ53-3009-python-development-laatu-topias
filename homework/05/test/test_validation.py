@@ -45,3 +45,21 @@ class TestValidation(unittest.TestCase):
         self.assertFalse(is_email("*^@gmail.com"))
 
         self.assertRaises(Exception, is_email, 666)
+
+    def test_is_personal_id(self):
+        self.assertTrue(is_personal_id("131052-308T"))
+        self.assertTrue(is_personal_id("120464-121C"))
+        self.assertTrue(is_personal_id("210668-677S"))
+        self.assertTrue(is_personal_id("140100A4744"))
+
+        self.assertFalse(is_personal_id("ABCDEFGHIJK"))
+        self.assertFalse(is_personal_id("1111111111111"))
+        self.assertFalse(is_personal_id("987654A1234"))
+        self.assertFalse(is_personal_id("011600A123A"))
+        self.assertFalse(is_personal_id("011131A256S"))
+        self.assertFalse(is_personal_id("070595-9999"))
+        #otherwise alright, but wrong check digit
+        self.assertFalse(is_personal_id("111111A111B"))
+
+        self.assertRaises(Exception, is_personal_id, 1111111111)
+
