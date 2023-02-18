@@ -1,6 +1,6 @@
 import unittest
 
-from util.validation import is_date
+from util.validation import *
 # from util.validation import is_email
 # from util.validation import is_personal_id
 
@@ -25,3 +25,23 @@ class TestValidation(unittest.TestCase):
 
         self.assertRaises(Exception, is_date, 2022-31-12)
         self.assertRaises(Exception, is_date, 20223112)
+    
+    def test_is_date(self):
+        self.assertTrue(is_email("jussi.pohjolainen@tuni.fi"))
+        self.assertTrue(is_email("heh@gmail.com"))
+        self.assertTrue(is_email("Ep1c-H4xx0rz@gmail.com"))
+
+        self.assertFalse(is_email("jaakko.jaakkonen@.fi"))
+        self.assertFalse(is_email("jaakko..jaakkonen@gmail.com"))
+        self.assertFalse(is_email(".jaakko.jaakkonen@gmail.com"))
+        self.assertFalse(is_email("jaakko.jaakkonen.@gmail.com"))
+        self.assertFalse(is_email("jaakko jaakkonen.@gmail.com"))
+        self.assertFalse(is_email("@gmail.com"))
+        self.assertFalse(is_email("jaakko.jaakkonengmail.com"))
+        self.assertFalse(is_email("jaakko.jaakkonen@.com"))
+        self.assertFalse(is_email("jaakko.jaakkonen@com"))
+        self.assertFalse(is_email("jaakko.jaakkonen@gmail."))
+        self.assertFalse(is_email("     @gmail.com"))
+        self.assertFalse(is_email("*^@gmail.com"))
+
+        self.assertRaises(Exception, is_email, 666)
