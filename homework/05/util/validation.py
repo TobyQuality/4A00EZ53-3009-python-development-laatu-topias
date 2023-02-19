@@ -4,7 +4,6 @@ import re
 """
 Module that contains validation related functions.
 """
-
 def is_date(date):
     """
     Validates the given string as a date.
@@ -80,7 +79,7 @@ def is_email(email):
         raise Exception("the email must be given as string object")
     # For validation the following form was taken from:
     # https://knowledge.validity.com/hc/en-us/articles/220560587-What-are-the-rules-for-email-address-syntax-
-    match_object = re.search("[a-zA-Z0-9!#$%&'*+-/=?^_`{|.]+@[a-zA-Z0-9-.]+[.][a-z]{2,4}", email)
+    match_object = re.search("[a-zA-Z0-9!#$%&'*+-/=?^_`{|.]+@[a-zA-Z0-9-.]+[.]{1}[a-z]{2,4}$", email)
     if bool(match_object):
         pass
     else:

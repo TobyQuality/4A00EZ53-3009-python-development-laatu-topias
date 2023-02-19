@@ -146,7 +146,7 @@ string_helper    </h1>
 </span><span id="L-83"><a href="#L-83"><span class="linenos">83</span></a>        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">:</span>
 </span><span id="L-84"><a href="#L-84"><span class="linenos">84</span></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The list must contain only string data&quot;</span><span class="p">)</span>
 </span><span id="L-85"><a href="#L-85"><span class="linenos">85</span></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="L-86"><a href="#L-86"><span class="linenos">86</span></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The data inside list must not contain empty strings&quot;</span><span class="p">)</span>
+</span><span id="L-86"><a href="#L-86"><span class="linenos">86</span></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The data inside list must not contain empty values&quot;</span><span class="p">)</span>
 </span><span id="L-87"><a href="#L-87"><span class="linenos">87</span></a>
 </span><span id="L-88"><a href="#L-88"><span class="linenos">88</span></a>    <span class="n">database</span> <span class="o">=</span> <span class="s2">&quot;Database:</span><span class="se">\n</span><span class="s2">&quot;</span>
 </span><span id="L-89"><a href="#L-89"><span class="linenos">89</span></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
@@ -157,9 +157,6 @@ string_helper    </h1>
 </span><span id="L-94"><a href="#L-94"><span class="linenos">94</span></a>        <span class="k">return</span> <span class="n">database</span>
 </span><span id="L-95"><a href="#L-95"><span class="linenos">95</span></a>    <span class="k">else</span><span class="p">:</span>
 </span><span id="L-96"><a href="#L-96"><span class="linenos">96</span></a>        <span class="k">return</span> <span class="s2">&quot;Empty List</span><span class="se">\n</span><span class="s2">&quot;</span>
-</span><span id="L-97"><a href="#L-97"><span class="linenos">97</span></a>
-</span><span id="L-98"><a href="#L-98"><span class="linenos">98</span></a><span class="c1">#test_list=[&quot;Oukki Doukki&quot;, &quot;James Bond&quot;]</span>
-</span><span id="L-99"><a href="#L-99"><span class="linenos">99</span></a><span class="c1">#print(list_to_str(test_list))</span>
 </span></pre></div>
 
 
@@ -292,7 +289,7 @@ ignore_case : bool, optional
 </span><span id="list_to_str-84"><a href="#list_to_str-84"><span class="linenos">84</span></a>        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">:</span>
 </span><span id="list_to_str-85"><a href="#list_to_str-85"><span class="linenos">85</span></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The list must contain only string data&quot;</span><span class="p">)</span>
 </span><span id="list_to_str-86"><a href="#list_to_str-86"><span class="linenos">86</span></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="list_to_str-87"><a href="#list_to_str-87"><span class="linenos">87</span></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The data inside list must not contain empty strings&quot;</span><span class="p">)</span>
+</span><span id="list_to_str-87"><a href="#list_to_str-87"><span class="linenos">87</span></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The data inside list must not contain empty values&quot;</span><span class="p">)</span>
 </span><span id="list_to_str-88"><a href="#list_to_str-88"><span class="linenos">88</span></a>
 </span><span id="list_to_str-89"><a href="#list_to_str-89"><span class="linenos">89</span></a>    <span class="n">database</span> <span class="o">=</span> <span class="s2">&quot;Database:</span><span class="se">\n</span><span class="s2">&quot;</span>
 </span><span id="list_to_str-90"><a href="#list_to_str-90"><span class="linenos">90</span></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>

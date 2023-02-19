@@ -1,1 +1,2 @@
-pdoc -o doc util/validation.py
+set PYTHONPATH=.
+pdoc -o doc validation.py
