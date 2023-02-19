@@ -92,9 +92,8 @@ def ask_date(message):
 def ask_person():
     """
     Asks person for name, email, id and start date at work.
-    The function utilizes methods: ask_name, ask_email, ask_id and ask_date.
+    The function utilizes methods validation methods.
     The user is asked for information until it is given in valid form.
-
     Args:
     ----------
     No arguments.
@@ -102,14 +101,27 @@ def ask_person():
     ----------
     A dict containing key-value pairs based on user input.
     """
-    name = ask_name("Give Name:")
-    email = ask_email("Give Email:")
-    personal_id = ask_id("Give Personal Id:")
-    date = ask_date("Give Start Date At Work:")
-    
-    return {
-        'Name': name,
-        'Email': email,
-        'Personal id': personal_id,
-        'Start date at work': date
+    input_values = {
+        "Name": is_name,
+        "Email": is_email,
+        "Personal id": is_personal_id,
+        "Start date at work": is_date
     }
+
+    for key in input_values:
+        valid = False
+        users_input = ""
+        while valid != True:
+            print("Give " + key)
+            try:
+                users_input = input()
+            except Exception as e:
+                print(e)
+                users_input = ""
+            if users_input:
+                value = input_values.get(key)
+                valid = value(users_input)
+            if valid:
+                input_values[key] = users_input
+
+    return input_values
