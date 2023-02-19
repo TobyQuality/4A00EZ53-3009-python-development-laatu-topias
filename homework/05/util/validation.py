@@ -1,7 +1,24 @@
 import datetime
 import re
 
+"""
+Module that contains validation related functions.
+"""
+
 def is_date(date):
+    """
+    Validates the given string as a date.
+
+    Args:
+    ----------
+    date (str): The string to be validated as a date. Must be in the format of 'yyyy-mm-dd'.
+    Returns:
+    ----------
+    bool: True if the given string is a valid date. False otherwise.
+    Raises:
+    ----------
+    Exception: If the date is not given as a string object.
+    """
     if type(date) is not str:
         raise Exception("the date must be given as string object")
     # year, month and day variables will be used in validation checks later
@@ -46,6 +63,19 @@ def is_date(date):
         return True
 
 def is_email(email):
+    """
+    Validates the given string as an email address.
+
+    Args:
+    ----------
+    email (str): The string to be validated as an email address.
+    Returns:
+    ----------
+    bool: True if the given string is a valid email address. False otherwise.
+    Raises:
+    ----------
+    Exception: If the email is not given as a string object.
+    """
     if type(email) is not str:
         raise Exception("the email must be given as string object")
     # For validation the following form was taken from:
@@ -95,6 +125,19 @@ def is_email(email):
     return True
 
 def is_personal_id(id):
+    """
+    Checks if the given ID string is a valid Finnish personal identification number.
+
+    Args:
+    ----------
+    id (str): The ID string to be checked.
+    Returns:
+    ----------
+    bool: True if the ID is valid, False otherwise.
+    Raises:
+    ----------
+    Exception: If the ID is not given as a string object.
+    """
     if type(id) is not str:
         raise Exception("the id must be given as string object")
     #First check is about finding out, if the overall syntax is correct
