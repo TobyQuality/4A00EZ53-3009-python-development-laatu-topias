@@ -25,7 +25,7 @@ def is_date(date):
     month = 0
     day = 0
     #in the first validation check the correct form of date will be checked
-    match_object = re.search("\d{1,4}-\d{1,2}-\d{1,2}", date)
+    match_object = re.search("^\d{1,4}-\d{1,2}-\d{1,2}$", date)
     if bool(match_object):
         # the date will be converted to int according to day, month and year
         year_month_day = re.split("-", date)

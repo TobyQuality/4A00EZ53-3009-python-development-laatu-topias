@@ -17,5 +17,4 @@ def main():
                 employees.append(employee)
             if input == -1:
                 return
-
 main()
