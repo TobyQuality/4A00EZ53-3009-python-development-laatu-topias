@@ -46,7 +46,6 @@ def is_date(date):
         pass
     else:
         return False
-    # In the fourth validation 
     # Final validation is checking the leap year
     if day==29 and month==2:
         # centuries are not leap years,
@@ -170,7 +169,7 @@ def is_personal_id(id):
     # id has individual number consisting of three digits after "-" or "A"
     # valid individual number is between 002-899
     individual_number = id[7:10]
-    if int(individual_number) >= 2 and int(individual_number) < 900:
+    if int(individual_number) > 1 and int(individual_number) < 900:
         pass
     else:
         return False
