@@ -1,4 +1,5 @@
 from flask import Flask
+from htmlhelper import *
 import datetime
 
 # create Flask object, give module name
@@ -17,7 +18,9 @@ def my_name():
 @app.route("/date")
 def date():
     date = datetime.datetime.now()
-    return date.strftime("%Y-%m-%d %H:%M:%S.%f")
+    date = date.strftime("%Y-%m-%d %H:%M:%S.%f")
+    html_page = generate_html_page("date", date)
+    return html_page
 
 # start the app if using python3 app.py
 if __name__ == "__main__":
