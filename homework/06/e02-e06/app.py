@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 from htmlhelper import *
 import datetime
+import random
 
 # create Flask object, give module name
 # where to look for resources, like templates or static files
