@@ -15,3 +15,15 @@ GET http://127.0.0.1:5000/date
 ###
 
 GET http://127.0.0.1:5000/slot-machine
+
+###
+
+GET http://127.0.0.1:5000/bmi?mass=100&height=2.00
+
+###
+
+GET http://127.0.0.1:5000/bmi?mass=-1&height=2.00
+
+###
+
+GET http://127.0.0.1:5000/bmi?mass=lol&height=2.00

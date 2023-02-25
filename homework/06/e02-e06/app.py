@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 from htmlhelper import *
 import datetime
 import random
@@ -33,7 +34,8 @@ def slot_machine():
         slot = random.choice(slots)
         chosen_slots.append(slot)
         # using tabulators to make the html code more readable
-        content = content + f"       <img src=\"static/{slot}\">\n"
+        content = content + f"      <img src=\"static/{slot}\">\n"
+
     content = content + "    </div>"
     win = True
     for i in range(0, len(chosen_slots) - 1):
@@ -41,14 +43,23 @@ def slot_machine():
             win = False
             break
     if win:
-        content = content + f"\n    <p>Win!</p>"
+        content = content + f"\n    <h1>Win!</h1>"
     
     html_page = generate_html_page("slot-machine", content)
     return html_page
 
-        
-
-    html_page = generate_html_page("slot-machine", )
+@app.route("/bmi")
+def bmi_calculator():
+    mass = int(request.args.get('mass'))
+    height = float(request.args.get('height'))
+    if mass <= 0 or height <= 0 or mass > 500 or height > 3.00:
+        return generate_html_page("Fail!", "<h1>Fail!</h1>")
+    else:
+        bmi = mass / (height * height)
+        bmi = round(bmi, 1)
+        content = f"<h1>BMI</h1>\n   <p>bmi={bmi}</p>"
+        html_page = generate_html_page("bmi", content)
+        return html_page
 
 # start the app if using python3 app.py
 if __name__ == "__main__":
