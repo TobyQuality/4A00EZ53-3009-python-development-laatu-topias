@@ -8,12 +8,13 @@
 </head>
 <body>
     <h1>BMI</h1>
-    <form action="http://127.0.0.1:5000/bmi">
+    <form action="#content">
         <input type="number" placeholder="mass" id="mass" min="0" max="500" name="mass">
         <label for="mass" >kg</label>
         <input type="number" placeholder="height" id="height" step="0.01" min="0.01" max="3.0" name="height">
         <label for="height" >m</label>
-        <button>Submit</button>
+        <button>Calculate</button>
     </form>
+    <div id="content"></div>
 </body>
 </html>

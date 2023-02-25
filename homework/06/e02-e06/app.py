@@ -2,7 +2,6 @@ from flask import Flask
 from flask import request
 from htmlhelper import *
 import datetime
-import random
 
 # create Flask object, give module name
 # where to look for resources, like templates or static files
@@ -50,16 +49,17 @@ def slot_machine():
 
 @app.route("/bmi")
 def bmi_calculator():
+    if request.args.get('mass') == None or request.args.get('height') == None:
+        return generate_bmi_form()
     mass = int(request.args.get('mass'))
     height = float(request.args.get('height'))
     if mass <= 0 or height <= 0 or mass > 500 or height > 3.00:
-        return generate_html_page("Fail!", "<h1>Fail!</h1>")
+        return generate_bmi_form("<h1>Fail!</h1>")
     else:
         bmi = mass / (height * height)
         bmi = round(bmi, 1)
-        content = f"<h1>BMI</h1>\n   <p>bmi={bmi}</p>"
-        html_page = generate_html_page("bmi", content)
-        return html_page
+        result = f"<h3>{bmi}</h3>"
+        return  generate_bmi_form(result)
 
 # start the app if using python3 app.py
 if __name__ == "__main__":
