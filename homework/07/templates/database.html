@@ -4,39 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Database</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"/>
 </head>
 <body>
-    <h1>Customer Database</h1>
-    <table id="customers-table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>First name</th>
-                <th>Last name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>    
-                {% for customer in customers %}
-                <tr>
-                    {% for data in customer %}
-                    <td>{{data}}</td>
-                    {% endfor %}
-                </tr>
-                {% endfor %}
-            </tr>
-        </tbody>
-    </table>
-    <h2>Give Input</h2>
-    <form action="/database" method="post">
-        <label for="firstname">First name</label>
-        <input type="text" name="firstname" placeholder="first name">
-
-        <label for="lastname">Last name</label>
-        <input type="text" name="lastname" placeholder="last name">
-
-        <button type="submit">Save</button>
-    </form>
-    <h3>{{notification}}</h3>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Customer Database</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for customer in customers %}
+                        <tr>
+                            {% for data in customer %}
+                            <td>{{data}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="mt-4 mb-4">Give Input</h2>
+                <form action="/database" method="post">
+                    <div class="form-group">
+                        <label for="firstname">First name</label>
+                        <input type="text" class="form-control" name="firstname" placeholder="Enter first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last name</label>
+                        <input type="text" class="form-control" name="lastname" placeholder="Enter last name">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+                <h3 class="mt-4 mb-4">{{notification}}</h3>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
