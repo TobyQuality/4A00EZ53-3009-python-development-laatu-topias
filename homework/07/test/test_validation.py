@@ -1,6 +1,5 @@
 import unittest
-
-from string_helper import is_name
+from validation import *
 
 class TestStringHelper(unittest.TestCase):
     def test_is_name(self): 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Database</title>
+</head>
+<body>
+    <h1>Customer Database</h1>
+    <table id="customers-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First name</th>
+                <th>Last name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>    
+                {% for customer in customers %}
+                <tr>
+                    {% for data in customer %}
+                    <td>{{data}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <h2>Give Input</h2>
+    <form action="/database" method="post">
+        <label for="firstname">First name</label>
+        <input type="text" name="firstname" placeholder="first name">
+
+        <label for="lastname">Last name</label>
+        <input type="text" name="lastname" placeholder="last name">
+
+        <button type="submit">Save</button>
+    </form>
+    <h3>{{notification}}</h3>
+</body>
+</html>

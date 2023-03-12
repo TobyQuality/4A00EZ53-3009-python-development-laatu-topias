@@ -20,7 +20,7 @@ def generate_bmi_form(content=""):
     <form action="#content">
         <input type="number" placeholder="mass" id="mass" min="0" max="500" name="mass">
         <label for="mass" >kg</label>
-        <input type="number" placeholder="height" id="height" step="0.01" min="0.01" max="3.0" name="height">
+        <input type="number" placeholder="height" id="height" step="0.01" min="0.00" max="3.0" name="height">
         <label for="height" >m</label>
         <button>Calculate</button>
     </form>
