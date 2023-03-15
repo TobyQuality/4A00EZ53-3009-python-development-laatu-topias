@@ -4,6 +4,7 @@ def csv_to_list(csv):
 
     csv_list = csv.split("\n")
     customers_list = []
+    
     for item in csv_list:
         customer_data = item.split(",")
         customers_list.append(customer_data)
