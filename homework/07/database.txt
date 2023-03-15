@@ -3,3 +3,8 @@
 3,Doggo,Dogson
 4,Pelle,Pellerson
 5,James,Bond
+6,Pekka,Pekkanen
+7,Pekka,Pekkanen
+8,Pekka,Pekkanen
+9,Aapo,Aaponen
+10,Apina,Apina
