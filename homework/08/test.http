@@ -1,0 +1,42 @@
+
+get https://tobys-python-cloud.onrender.com/customers
+
+###
+
+get https://tobys-my-python-cloud.onrender.com/customers/1
+
+###
+
+delete https://tobys-python-cloud.onrender.com/customers/1
+
+###
+
+post http://tobys-python-cloud.onrender.com/customers
+Content-type: application/json
+
+{ "id": 7, "name": "tina" }
+
+###
+get http://127.0.0.1:5000/customers
+
+###
+
+get http://127.0.0.1:5000/customers/1
+
+###
+
+delete http://127.0.0.1:5000/customers/99
+
+###
+
+post http://127.0.0.1:5000/customers
+Content-type: application/json
+
+{"name": "tina" }
+
+###
+
+post http://127.0.0.1:5000/customers
+Content-type: application/json
+
+{ "id": 7, "name": "jaakko" }
